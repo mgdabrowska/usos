@@ -5,7 +5,7 @@ package pl.lodz.usos;
  */
 public class Student {
 
-    private String index;
+    String index;
     private String firstName;
     private String lastName;
 
@@ -15,4 +15,9 @@ public class Student {
         this.firstName = firstName;
         this.lastName = lastName;
     }
+
+
+	public String getIndex() {
+		return index;
+	}
 }

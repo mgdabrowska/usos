@@ -1,14 +1,10 @@
 package pl.lodz.usos;
 
-
-
-import org.hamcrest.CoreMatchers;
-import org.junit.Assert;
-import org.junit.Test;
-
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
 
 /**
  * Created by stawicad on 2016-02-10.
@@ -29,5 +25,6 @@ public class StudentServiceTest {
         assertTrue("Student should have been added properly", added);
         assertTrue(studentService.getAllStudents().size() == 1);
         assertThat(studentService.getStudent("123"), is(stas));
+        assertThat(studentService.getStudent("123").getIndex(), is("123"));
     }
 }
