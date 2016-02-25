@@ -20,4 +20,8 @@ public class Student {
 	public String getIndex() {
 		return index;
 	}
+	
+	public String toString(){
+		return " "+ index +" "+ firstName+ " "+ lastName+" ";
+	}
 }
