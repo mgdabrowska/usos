@@ -22,6 +22,6 @@ public class Student {
 	}
 	
 	public String toString(){
-		return " "+ index +" "+ firstName+ " "+ lastName+" ";
+		return " "+ index +"; "+ firstName+ " ;"+ lastName+" ";
 	}
 }
