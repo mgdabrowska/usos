@@ -1,5 +1,6 @@
 package pl.lodz.usos;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
@@ -7,7 +8,7 @@ import java.util.Scanner;
  */
 public class ConsoleApplications {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 
 		StudentService ss = new StudentService();
 

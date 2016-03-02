@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -25,7 +26,7 @@ public class FileDaoTest {
     }
 
     @Test
-    public void simpleTest() {
+    public void simpleTest() throws FileNotFoundException {
         //given
         Student stas = new Student("123", "Stas", "Nowak");
 
