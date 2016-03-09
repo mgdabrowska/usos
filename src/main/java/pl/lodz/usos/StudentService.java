@@ -10,7 +10,7 @@ import java.util.List;
 public class StudentService {
 	
 	//private List<Student> students = new ArrayList<Student>();
-	private FileDao dao = new FileDao("baza.txt");
+	private FileStudentDao dao = new FileStudentDao("baza.txt");
 
     public boolean addNewStudent(Student s) throws FileNotFoundException {
     	dao.addStudent(s);
