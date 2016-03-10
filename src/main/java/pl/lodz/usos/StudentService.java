@@ -33,14 +33,11 @@ public class StudentService {
 		return null;
 	}
 
-	public Student removeStudent(String index) throws FileNotFoundException {
-		List<Student> allStudents = dao.getAllStudents();
-		for (int i = 0; i < allStudents.size(); i++) {
-			if (allStudents.get(i).index.equals(index)) {
-				return dao.removeStudent(null);
-			}
-	}
-		return null;
+	public Student removeStudent(String index) throws IOException {
+				return dao.removeStudent(index);
+			
+	//}
+		//return null;
 
 	}
 }

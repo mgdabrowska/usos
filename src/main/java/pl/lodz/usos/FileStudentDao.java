@@ -15,7 +15,6 @@ public class FileStudentDao implements StudentDao {
 	private File file;
 
 	public FileStudentDao(String plik) {
-
 		file = new File(plik);
 	}
 
@@ -28,26 +27,30 @@ public class FileStudentDao implements StudentDao {
 			result.add(new Student(a[0], a[1], a[2]));
 
 		}
+		in.close();
 		return result;
 	}
 
 	public boolean addStudent(Student s) throws IOException {
-		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(file, true)));
+		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(
+				file, true)));
 		out.println(s.index + ";" + s.getFirstName() + ";" + s.getLastName());
 		out.close();
 		return true;
 	}
 
-	public Student removeStudent(String index) throws IOException  {
-		getAllStudents();
-		file.delete();
-		for (int i = 0; i < getAllStudents().size(); i++) {
-			if (getAllStudents().get(i).index.equals(index)) {
-				return getAllStudents().remove(i);
+	public Student removeStudent(String index) throws IOException {
+		List<Student> allStudents = getAllStudents();
+		//file.delete();
+		PrintWriter out = new PrintWriter(file);
+		for (int i = 0; i < allStudents.size(); i++) {
+			if (!allStudents.get(i).index.equals(index)) {
+				//addStudent(getAllStudents().get(i));
+				Student s = allStudents.get(i);
+				out.println(s.index + ";" + s.getFirstName() + ";" + s.getLastName());
 			}
-			//return null;
-			addStudent(getAllStudents().get(i));
 		}
+		out.close();
 		return null;
 	}
 
