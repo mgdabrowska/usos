@@ -1,6 +1,7 @@
 package pl.lodz.usos;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Scanner;
  */
 public class ConsoleApplications {
 
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(String[] args) throws IOException {
 
 		StudentService ss = new StudentService();
 
@@ -44,7 +45,7 @@ public class ConsoleApplications {
 			if("4".equals(a)){
 				System.out.println("give the student's index");
 				String index = sc.nextLine();
-				System.out.println();
+				System.out.println(ss.removeStudent(index));
 				
 			}
 			if("5".equals(a)){
