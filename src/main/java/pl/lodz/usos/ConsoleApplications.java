@@ -17,7 +17,8 @@ public class ConsoleApplications {
 			System.out.println("1 - add the students");
 			System.out.println("2 - show all students");
 			System.out.println("3 - wyszukaj studenta po indeksie");
-			System.out.println("4 - stop");
+			System.out.println("4 - remove the students");
+			System.out.println("5 - stop");
 
 			Scanner sc = new Scanner(System.in);
 			System.out.println("give the number");
@@ -41,6 +42,12 @@ public class ConsoleApplications {
 				System.out.println(ss.getStudent(index));
 			}
 			if("4".equals(a)){
+				System.out.println("give the student's index");
+				String index = sc.nextLine();
+				System.out.println();
+				
+			}
+			if("5".equals(a)){
 				break;
 			}
 		}

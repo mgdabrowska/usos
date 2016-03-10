@@ -8,6 +8,8 @@ public interface StudentDao {
 
 	public boolean addStudent(Student s) throws FileNotFoundException;
 
-	public Student getStudent(String index);
+	public Student getStudent(String index) throws FileNotFoundException;
+
+	public Student removeStudent(String index) throws FileNotFoundException;
 
 }

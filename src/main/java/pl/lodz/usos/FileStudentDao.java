@@ -19,26 +19,37 @@ public class FileStudentDao implements StudentDao {
 	public List<Student> getAllStudents() throws FileNotFoundException {
 		Scanner in = new Scanner(file);
 		List<Student> result = new ArrayList<Student>();
-		while(in.hasNextLine()){
+		while (in.hasNextLine()) {
 			String read = in.nextLine();
-			String[] a =read.split(";");
-			result.add(new Student(a[0], a[1],a[2]));
-			
-			
+			String[] a = read.split(";");
+			result.add(new Student(a[0], a[1], a[2]));
+
 		}
 		return result;
 	}
 
 	public boolean addStudent(Student s) throws FileNotFoundException {
 		PrintWriter out = new PrintWriter(file);
-		out.println(s.index+";"+s.getFirstName()+";"+s.getLastName());
+		out.println(s.index + ";" + s.getFirstName() + ";" + s.getLastName());
 		out.close();
 		return true;
 	}
 
-	public Student getStudent(String index) {
-		
+	public Student removeStudent(String index) throws FileNotFoundException {
+		getAllStudents();
+		for (int i = 0; i < getAllStudents().size(); i++) {
+			if (getAllStudents().get(i).index.equals(index)) {
+				return getAllStudents().remove(i);
+			}
+			//return null;
+			file.delete();
+			addStudent(getAllStudents().remove(i));
+		}
 		return null;
 	}
-	
+
+	public Student getStudent(String index) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
