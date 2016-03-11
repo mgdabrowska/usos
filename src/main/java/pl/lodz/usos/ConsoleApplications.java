@@ -31,8 +31,13 @@ public class ConsoleApplications {
 				String surname = sc.nextLine();
 				System.out.println("give the index");
 				String index = sc.nextLine();
-
-				ss.addNewStudent(new Student(index, name, surname));
+				int len = index.length();
+				if(len == (int)6){
+					ss.addNewStudent(new Student(index, name, surname));
+					
+				}else
+					System.out.println("Index musi mieæ 6 cyfr");
+				continue;
 			}
 			if ("2".equals(a)) {
 				System.out.println(""+ss.getAllStudents()+"");

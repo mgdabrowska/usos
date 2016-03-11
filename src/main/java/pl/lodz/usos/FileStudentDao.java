@@ -41,13 +41,14 @@ public class FileStudentDao implements StudentDao {
 
 	public Student removeStudent(String index) throws IOException {
 		List<Student> allStudents = getAllStudents();
-		//file.delete();
+		// file.delete();
 		PrintWriter out = new PrintWriter(file);
 		for (int i = 0; i < allStudents.size(); i++) {
 			if (!allStudents.get(i).index.equals(index)) {
-				//addStudent(getAllStudents().get(i));
+				// addStudent(getAllStudents().get(i));
 				Student s = allStudents.get(i);
-				out.println(s.index + ";" + s.getFirstName() + ";" + s.getLastName());
+				out.println(s.index + ";" + s.getFirstName() + ";"
+						+ s.getLastName());
 			}
 		}
 		out.close();
@@ -58,4 +59,14 @@ public class FileStudentDao implements StudentDao {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public Student checkStudent(String index) throws FileNotFoundException{
+		List<Student> allStudents = getAllStudents();
+		allStudents.contains(index);
+		
+		return null;
+		
+	}
+
+	
 }
