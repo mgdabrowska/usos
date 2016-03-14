@@ -31,7 +31,7 @@ public class FileStudentDao implements StudentDao {
 		return result;
 	}
 
-	public boolean addStudent(Student s) throws IOException {
+	public boolean  addNewStudent(Student s) throws IOException {
 		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(
 				file, true)));
 		out.println(s.index + ";" + s.getFirstName() + ";" + s.getLastName());
@@ -59,14 +59,25 @@ public class FileStudentDao implements StudentDao {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	public Student checkStudent(String index) throws FileNotFoundException{
+	
+	public boolean exist(Object student) throws FileNotFoundException {
 		List<Student> allStudents = getAllStudents();
-		allStudents.contains(index);
-		
-		return null;
-		
+		for (int i = 0; i < allStudents.size(); i++) {
+			if(allStudents.contains(student)){
+				return true;
+			}
+		}
+		return false;
 	}
+
+	public boolean addStudent(Student s) throws FileNotFoundException,
+			IOException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+		
+	
+	
 
 	
 }

@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class ConsoleApplications {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, StudentNotFoundException {
 
 		StudentService ss = new StudentService();
 

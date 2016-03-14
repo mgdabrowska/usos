@@ -18,14 +18,16 @@ public class StudentService {
 		return true;
 	}
 
-	public List<Student> getAllStudents() throws FileNotFoundException {
-
+	public List<Student> getAllStudents() throws FileNotFoundException, StudentNotFoundException {
+		Object student = null;
+		if( ! dao.exist(student) ) throw new StudentNotFoundException();
 		return dao.getAllStudents();
 	}
 
-	public Student getStudent(String index) throws FileNotFoundException {
+	public Student getStudent(String index) throws FileNotFoundException, StudentNotFoundException {
 		List<Student> allStudents = dao.getAllStudents();
-		//if(dao.checkStudent(index)==true){
+		Object student = null;
+		if( ! dao.exist(student) ) throw new StudentNotFoundException();
 		for (int i = 0; i < allStudents.size(); i++) {
 			if (allStudents.get(i).index.equals(index)) {
 				return allStudents.get(i);
@@ -35,7 +37,9 @@ public class StudentService {
 	
 	}
 
-	public Student removeStudent(String index) throws IOException {
+	public Student removeStudent(String index) throws IOException, StudentNotFoundException {
+		Object student = null;
+		if( ! dao.exist(student) ) throw new StudentNotFoundException();
 				return dao.removeStudent(index);
 			
 	//}
