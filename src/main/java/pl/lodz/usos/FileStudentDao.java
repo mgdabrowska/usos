@@ -59,19 +59,14 @@ public class FileStudentDao implements StudentDao {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	public boolean exist(Object student) throws FileNotFoundException {
-		List<Student> allStudents = getAllStudents();
-		for (int i = 0; i < allStudents.size(); i++) {
-			if(allStudents.contains(student)){
-				return true;
-			}
-		}
-		return false;
-	}
 
 	public boolean addStudent(Student s) throws FileNotFoundException,
 			IOException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean exist(Object student) throws FileNotFoundException {
 		// TODO Auto-generated method stub
 		return false;
 	}
