@@ -79,7 +79,7 @@ public class FileStudentDao implements StudentDao {
 		return false;
 	}
 
-	public boolean exist(Object student) throws FileNotFoundException {
+	public boolean exist(Student student) throws FileNotFoundException {
 		// TODO Auto-generated method stub
 		return false;
 	}

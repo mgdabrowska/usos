@@ -9,7 +9,8 @@ import java.util.Scanner;
  */
 public class ConsoleApplications {
 
-	public static void main(String[] args) throws IOException, StudentNotFoundException {
+	public static void main(String[] args) throws IOException,
+			StudentNotFoundException {
 
 		StudentService ss = new StudentService();
 
@@ -32,28 +33,28 @@ public class ConsoleApplications {
 				System.out.println("give the index");
 				String index = sc.nextLine();
 				int len = index.length();
-				if(len == (int)6){
+				if (len == (int) 6) {
 					ss.addNewStudent(new Student(index, name, surname));
-					
-				}else
+
+				} else
 					System.out.println("Index musi mieæ 6 cyfr");
 				continue;
 			}
 			if ("2".equals(a)) {
-				System.out.println(""+ss.getAllStudents()+"");
+				System.out.println("" + ss.getAllStudents() + "");
 			}
-			if("3".equals(a)){
+			if ("3".equals(a)) {
 				System.out.println("give the index");
 				String index = sc.nextLine();
 				System.out.println(ss.getStudent(index));
 			}
-			if("4".equals(a)){
+			if ("4".equals(a)) {
 				System.out.println("give the student's index");
 				String index = sc.nextLine();
 				System.out.println(ss.removeStudent(index));
-				
+
 			}
-			if("5".equals(a)){
+			if ("5".equals(a)) {
 				break;
 			}
 		}
