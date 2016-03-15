@@ -15,7 +15,20 @@ public class FileStudentDao implements StudentDao {
 	private File file;
 
 	public FileStudentDao(String plik) {
-		file = new File(plik);
+		//file = new File(plik);
+		try {
+   		 
+		       file = new File(plik);
+		      
+		      if (file.createNewFile()){
+		        System.out.println("File is created!");
+		      }else{
+		        System.out.println("File already exists.");
+		      }
+		      
+	    	} catch (IOException e) {
+		      e.printStackTrace();
+		}
 	}
 
 	public List<Student> getAllStudents() throws FileNotFoundException {

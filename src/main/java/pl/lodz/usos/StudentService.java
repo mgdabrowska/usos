@@ -11,15 +11,15 @@ import java.util.List;
 public class StudentService {
 
 	// private List<Student> students = new ArrayList<Student>();
+	
 	private FileStudentDao dao = new FileStudentDao("baza.txt");
-
+	
 	public boolean addNewStudent(Student s) throws IOException {
 		dao.addStudent(s);
 		return true;
 	}
 
 	public List<Student> getAllStudents() throws FileNotFoundException, StudentNotFoundException {
-		//Object student = null ;
 		List<Student> student =  dao.getAllStudents();
 		if( student == null ){
 			throw new StudentNotFoundException();
