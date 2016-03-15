@@ -46,18 +46,27 @@ public class ConsoleApplications {
 			if ("3".equals(a)) {
 				System.out.println("give the index");
 				String index = sc.nextLine();
-				System.out.println(ss.getStudent(index));
-			}
-			if ("4".equals(a)) {
-				System.out.println("give the student's index");
-				String index = sc.nextLine();
-				System.out.println(ss.removeStudent(index));
+				try {
+					
+					System.out.println(ss.getStudent(index));
+				} catch (StudentNotFoundException e) {
+					System.out.println("student nie istnieje");
+				}
+				if ("4".equals(a)) {
+					System.out.println("give the student's index");
+					String indeks = sc.nextLine();
+					try {
+						System.out.println(ss.removeStudent(indeks));
+					} catch (StudentNotFoundException e) {
+						System.out.println("student nie istnieje");
 
+					}
+					if ("5".equals(a)) {
+						break;
+					}
+				}
 			}
-			if ("5".equals(a)) {
-				break;
-			}
+
 		}
 	}
-
 }

@@ -15,19 +15,19 @@ public class FileStudentDao implements StudentDao {
 	private File file;
 
 	public FileStudentDao(String plik) {
-		//file = new File(plik);
+		// file = new File(plik);
 		try {
-   		 
-		       file = new File(plik);
-		      
-		      if (file.createNewFile()){
-		        System.out.println("File is created!");
-		      }else{
-		        System.out.println("File already exists.");
-		      }
-		      
-	    	} catch (IOException e) {
-		      e.printStackTrace();
+
+			file = new File(plik);
+
+			if (file.createNewFile()) {
+				System.out.println("File is created!");
+			} else {
+				System.out.println("File already exists.");
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -44,7 +44,7 @@ public class FileStudentDao implements StudentDao {
 		return result;
 	}
 
-	public boolean  addNewStudent(Student s) throws IOException {
+	public boolean addNewStudent(Student s) throws IOException {
 		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(
 				file, true)));
 		out.println(s.index + ";" + s.getFirstName() + ";" + s.getLastName());
@@ -81,11 +81,14 @@ public class FileStudentDao implements StudentDao {
 
 	public boolean exist(Student student) throws FileNotFoundException {
 		// TODO Auto-generated method stub
+		List<Student> allStudents = getAllStudents();
+		for (int i = 0; i < allStudents.size(); i++) {
+			if (allStudents.get(i).equals(student)) {
+				return true;
+
+			}
+
+		}
 		return false;
 	}
-		
-	
-	
-
-	
 }

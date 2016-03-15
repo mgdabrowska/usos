@@ -15,5 +15,4 @@ public interface StudentDao {
 	public Student removeStudent(String index) throws FileNotFoundException,
 			IOException;
 
-
 }

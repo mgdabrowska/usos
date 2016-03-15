@@ -49,7 +49,7 @@ public class StudentService {
 	public Student removeStudent(String index) throws IOException,
 			StudentNotFoundException {
 		//Student student = null;
-		if (!dao.exist(dao.getStudent(index))) {
+		if (!dao.exist(getStudent(index))) {
 			throw new StudentNotFoundException();
 		}
 		Student student = dao.removeStudent(index);
