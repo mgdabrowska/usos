@@ -33,8 +33,8 @@ public class StudentService {
 	public Student getStudent(String index) throws FileNotFoundException,
 			StudentNotFoundException {
 		List<Student> allStudents = dao.getAllStudents();
-		Student student = null;
-		if (!dao.exist(student)) {
+		//Student student = null;
+		if (!dao.exist(index)) {
 			throw new StudentNotFoundException();
 		}
 		for (int i = 0; i < allStudents.size(); i++) {
@@ -48,13 +48,14 @@ public class StudentService {
 
 	public Student removeStudent(String index) throws IOException,
 			StudentNotFoundException {
-		//Student student = null;
-		if (!dao.exist(getStudent(index))) {
+		
+		//String student= null;
+		if (!dao.exist(index)) {
 			throw new StudentNotFoundException();
 		}
-		Student student = dao.removeStudent(index);
+		 return dao.removeStudent(index);
 
-		return null;
+		//return null;
 
 	}
 }

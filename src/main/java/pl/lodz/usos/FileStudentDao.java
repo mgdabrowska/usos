@@ -79,11 +79,11 @@ public class FileStudentDao implements StudentDao {
 		return false;
 	}
 
-	public boolean exist(Student student) throws FileNotFoundException {
+	public boolean exist(String student) throws FileNotFoundException {
 		// TODO Auto-generated method stub
 		List<Student> allStudents = getAllStudents();
 		for (int i = 0; i < allStudents.size(); i++) {
-			if (allStudents.get(i).equals(student)) {
+			if (allStudents.get(i).index.equals(student)) {
 				return true;
 
 			}

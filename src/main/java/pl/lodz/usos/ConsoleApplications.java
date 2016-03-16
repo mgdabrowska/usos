@@ -1,6 +1,5 @@
 package pl.lodz.usos;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -47,7 +46,7 @@ public class ConsoleApplications {
 				System.out.println("give the index");
 				String index = sc.nextLine();
 				try {
-					
+
 					System.out.println(ss.getStudent(index));
 				} catch (StudentNotFoundException e) {
 					System.out.println("student nie istnieje");
