@@ -2,7 +2,6 @@ package pl.lodz.usos;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,10 +21,10 @@ public class StudentService {
 	public List<Student> getAllStudents() throws FileNotFoundException,
 			StudentNotFoundException {
 		List<Student> students = dao.getAllStudents();
-		//Student student = null;
-		//if (!dao.exist(student)) {
-		//	throw new StudentNotFoundException();
-		//}
+		// Student student = null;
+		// if (!dao.exist(student)) {
+		// throw new StudentNotFoundException();
+		// }
 
 		return dao.getAllStudents();
 	}
@@ -33,7 +32,7 @@ public class StudentService {
 	public Student getStudent(String index) throws FileNotFoundException,
 			StudentNotFoundException {
 		List<Student> allStudents = dao.getAllStudents();
-		//Student student = null;
+		// Student student = null;
 		if (!dao.exist(index)) {
 			throw new StudentNotFoundException();
 		}
@@ -48,14 +47,11 @@ public class StudentService {
 
 	public Student removeStudent(String index) throws IOException,
 			StudentNotFoundException {
-		
-		//String student= null;
+
 		if (!dao.exist(index)) {
 			throw new StudentNotFoundException();
 		}
-		 return dao.removeStudent(index);
-
-		//return null;
+		return dao.removeStudent(index);
 
 	}
 }

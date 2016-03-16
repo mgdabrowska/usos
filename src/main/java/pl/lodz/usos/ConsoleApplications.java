@@ -51,21 +51,21 @@ public class ConsoleApplications {
 				} catch (StudentNotFoundException e) {
 					System.out.println("student nie istnieje");
 				}
-				if ("4".equals(a)) {
-					System.out.println("give the student's index");
-					String indeks = sc.nextLine();
-					try {
-						System.out.println(ss.removeStudent(indeks));
-					} catch (StudentNotFoundException e) {
-						System.out.println("student nie istnieje");
+			}
+			if ("4".equals(a)) {
+				System.out.println("give the student's index");
+				String indeks = sc.nextLine();
+				try {
+					System.out.println(ss.removeStudent(indeks));
+				} catch (StudentNotFoundException e) {
+					System.out.println("student nie istnieje");
 
-					}
-					if ("5".equals(a)) {
-						break;
-					}
 				}
 			}
-
+			if ("5".equals(a)) {
+				break;
+			}
 		}
+
 	}
 }

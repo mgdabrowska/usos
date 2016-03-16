@@ -44,7 +44,7 @@ public class FileStudentDao implements StudentDao {
 		return result;
 	}
 
-	public boolean addNewStudent(Student s) throws IOException {
+	public boolean addStudent(Student s) throws IOException {
 		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(
 				file, true)));
 		out.println(s.index + ";" + s.getFirstName() + ";" + s.getLastName());
@@ -65,18 +65,13 @@ public class FileStudentDao implements StudentDao {
 			}
 		}
 		out.close();
-		return null;
+		System.out.println("Usuniêto studenta :");
+		return allStudents.iterator().next();
 	}
 
 	public Student getStudent(String index) throws FileNotFoundException {
 		// TODO Auto-generated method stub
 		return null;
-	}
-
-	public boolean addStudent(Student s) throws FileNotFoundException,
-			IOException {
-		// TODO Auto-generated method stub
-		return false;
 	}
 
 	public boolean exist(String student) throws FileNotFoundException {
@@ -89,6 +84,12 @@ public class FileStudentDao implements StudentDao {
 			}
 
 		}
+		return false;
+	}
+
+	public boolean addNewStudent(Student s) throws FileNotFoundException,
+			IOException {
+		// TODO Auto-generated method stub
 		return false;
 	}
 }

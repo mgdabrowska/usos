@@ -5,36 +5,31 @@ package pl.lodz.usos;
  */
 public class Student {
 
-    String index;
-    private String firstName;
-    private String lastName;
+	String index;
+	private String firstName;
+	private String lastName;
 
-
-    public Student(String index, String firstName, String lastName) {
-        this.index = index;
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-
+	public Student(String index, String firstName, String lastName) {
+		this.index = index;
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
 
 	public String getIndex() {
 		return index;
 	}
-	
-	public String toString(){
-		return index +";"+ firstName+ ";"+ lastName;
-	}
 
+	public String toString() {
+		return index + ";" + firstName + ";" + lastName;
+	}
 
 	public String getFirstName() {
 		return firstName;
 	}
 
-
 	public String getLastName() {
 		return lastName;
 	}
-
 
 	@Override
 	public int hashCode() {
@@ -47,7 +42,6 @@ public class Student {
 				+ ((lastName == null) ? 0 : lastName.hashCode());
 		return result;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -75,6 +69,5 @@ public class Student {
 			return false;
 		return true;
 	}
-	
-	
+
 }
