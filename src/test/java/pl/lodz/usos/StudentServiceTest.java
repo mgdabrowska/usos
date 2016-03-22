@@ -4,9 +4,8 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
-import java.io.FileNotFoundException;
-
 import org.junit.Test;
+import java.io.IOException;
 
 /**
  * Created by stawicad on 2016-02-10.
@@ -16,7 +15,7 @@ public class StudentServiceTest {
     private StudentService studentService = new StudentService();
 
     @Test
-    public void simpleTest() throws FileNotFoundException {
+    public void simpleTest() throws IOException, StudentNotFoundException {
         //given
         Student stas = new Student("123", "Stas", "Nowak");
 

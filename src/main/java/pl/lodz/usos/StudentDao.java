@@ -15,4 +15,5 @@ public interface StudentDao {
 	public Student removeStudent(String index) throws FileNotFoundException,
 			IOException;
 
+	boolean exist(String student) throws FileNotFoundException;
 }

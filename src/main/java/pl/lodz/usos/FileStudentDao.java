@@ -75,7 +75,6 @@ public class FileStudentDao implements StudentDao {
 	}
 
 	public boolean exist(String student) throws FileNotFoundException {
-		// TODO Auto-generated method stub
 		List<Student> allStudents = getAllStudents();
 		for (int i = 0; i < allStudents.size(); i++) {
 			if (allStudents.get(i).index.equals(student)) {

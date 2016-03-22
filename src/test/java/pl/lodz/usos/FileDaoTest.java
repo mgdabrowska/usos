@@ -1,15 +1,11 @@
 package pl.lodz.usos;
 
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Before;
 import org.junit.Test;
-
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
 
 /**
  * Created by stawicad on 2016-03-01.
@@ -17,16 +13,16 @@ import static org.junit.Assert.assertTrue;
 public class FileDaoTest {
 
     private String absolutePath;
-    private FileDao fileDao;
+    private StudentDao fileDao;
 
     @Before
     public void setUp() throws IOException {
         absolutePath = File.createTempFile("filedao", "test").getAbsolutePath();
-        fileDao = new FileDao(absolutePath);
+        fileDao = new FileStudentDao(absolutePath);
     }
 
     @Test
-    public void simpleTest() throws FileNotFoundException {
+    public void simpleTest() throws IOException {
         //given
         Student stas = new Student("123", "Stas", "Nowak");
 
